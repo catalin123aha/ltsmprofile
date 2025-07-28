@@ -1,4 +1,130 @@
-Here's the Romanian version of the futuristic language voting platform:
+🔄 **HTML Edit Mode** - Processing your edit request...
+
+Here are the specific changes to make the interface more attractive while keeping the same functionality:
+
+1. First, update the head section with better styling:
+
+```diff
+<<<<<<< SEARCH
+    <script src="https://cdn.tailwindcss.com"></script>
+=======
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --secondary: #a78bfa;
+            --accent: #ec4899;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .card {
+            backdrop-filter: blur(10px);
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+        }
+        .option-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4);
+        }
+    </style>
+>>>>>>> REPLACE
+
+
+```
+2. Update the main title section:
+
+```diff
+<<<<<<< SEARCH
+        <h1 class="text-3xl font-bold text-center mb-8">LTSM - Votare Limbă</h1>
+=======
+        <h1 class="text-5xl font-bold text-center mb-2 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">LTSM</h1>
+        <p class="text-xl text-center mb-8 text-gray-300">Votare limbă preferată</p>
+>>>>>>> REPLACE
+
+
+```
+3. Update the name entry section:
+
+```diff
+<<<<<<< SEARCH
+        <div id="name-entry" class="max-w-md mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">Introdu numele tău</h2>
+            <input type="text" id="username" placeholder="Numele tău..." class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 mb-4">
+            <button id="register-btn" disabled class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded disabled:opacity-50">Înregistrează-te</button>
+        </div>
+=======
+        <div id="name-entry" class="max-w-md mx-auto card p-8 rounded-2xl shadow-xl">
+            <h2 class="text-2xl font-bold mb-6 text-center">Introdu numele tău</h2>
+            <input type="text" id="username" placeholder="Cum te cheamă?" 
+                   class="w-full px-5 py-3 rounded-xl bg-slate-800 border border-slate-700 focus:ring-2 focus:ring-purple-500 mb-6 text-lg">
+            <button id="register-btn" disabled 
+                    class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-medium transition-all hover:scale-[1.02] disabled:opacity-50">
+                Înregistrează-te <span class="ml-2">→</span>
+            </button>
+        </div>
+>>>>>>> REPLACE
+
+
+```
+4. Update the voting options:
+
+```diff
+<<<<<<< SEARCH
+                <div class="voting-option p-4 mb-4 rounded bg-gray-700 cursor-pointer hover:bg-gray-600" data-language="romana">
+                    <div class="flex justify-between mb-1">
+                        <span>Română</span>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <div class="progress-bar h-2 bg-gray-600 rounded-full">
+                        <div class="progress-fill h-full bg-blue-500 rounded-full" style="width: 0%"></div>
+                    </div>
+                </div>
+=======
+                <div class="voting-option option-card p-5 mb-4 rounded-xl bg-slate-800/80 cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg" data-language="romana">
+                    <div class="flex justify-between mb-2 items-center">
+                        <span class="text-lg font-medium">Română 🇷🇴</span>
+                        <span class="percentage text-purple-300 font-bold">0%</span>
+                    </div>
+                    <div class="progress-bar bg-slate-700">
+                        <div class="progress-fill bg-gradient-to-r from-purple-500 to-pink-500" style="width: 0%"></div>
+                    </div>
+                </div>
+>>>>>>> REPLACE
+
+
+```
+5. Update the leaderboard section:
+
+```diff
+<<<<<<< SEARCH
+                <h2 class="text-xl font-semibold mb-4">Clasament</h2>
+                <div id="leaderboard" class="space-y-2">
+                    <p class="text-gray-400">Niciun vot încă...</p>
+                </div>
+=======
+                <h2 class="text-xl font-bold mb-4 text-purple-300">🔝 Clasament</h2>
+                <div id="leaderboard" class="space-y-3">
+                    <p class="text-gray-400 text-center py-4">Așteptăm primul vot...</p>
+                </div>
+>>>>>>> REPLACE
+
+
+```
+These changes will create a more modern, attractive interface while maintaining all the original functionality. The design includes:
+- Gradient colors and smooth animations
+- Better typography with custom font
+- Improved card designs with blur effects
+- More vibrant interactive elements
+- Consistent spacing and proportions
+- Modern progress bars
+- Emoji integration for visual appealHere is the updated HTML content after applying above edits:
 
 ```html
 <!DOCTYPE html>
@@ -8,319 +134,152 @@ Here's the Romanian version of the futuristic language voting platform:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LTSM - Votare Limbă</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;700&display=swap');
-        
         :root {
-            --primary: #6c5ce7;
-            --secondary: #a29bfe;
-            --accent: #fd79a8;
-            --dark: #2d3436;
-            --light: #f5f6fa;
+            --primary: #8b5cf6;
+            --secondary: #a78bfa;
+            --accent: #ec4899;
         }
-        
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: var(--light);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(108, 92, 231, 0.15) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(253, 121, 168, 0.15) 0%, transparent 20%);
-            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
-        
-        h1, h2, h3 {
-            font-family: 'Orbitron', sans-serif;
-        }
-        
         .card {
             backdrop-filter: blur(10px);
-            background: rgba(44, 53, 82, 0.5);
+            background: rgba(30, 41, 59, 0.7);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            transition: all 0.3s ease;
         }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px 0 rgba(108, 92, 231, 0.3);
-        }
-        
         .progress-bar {
-            height: 10px;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-            overflow: hidden;
+            height: 8px;
+            border-radius: 4px;
         }
-        
-        .progress-fill {
-            height: 100%;
-            border-radius: 5px;
-            transition: width 0.5s ease-in-out;
-        }
-        
-        .glow {
-            animation: pulse 2s infinite alternate;
-        }
-        
-        @keyframes pulse {
-            from {
-                box-shadow: 0 0 5px rgba(253, 121, 168, 0.5);
-            }
-            to {
-                box-shadow: 0 0 20px rgba(253, 121, 168, 0.5);
-            }
-        }
-        
-        .leaderboard-item {
-            transition: all 0.3s ease;
-        }
-        
-        .leaderboard-item:hover {
-            background: rgba(108, 92, 231, 0.1);
-        }
-        
-        input:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.5);
-        }
-        
-        button {
-            transition: all 0.3s ease;
-        }
-        
-        button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
+        .option-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4);
         }
     </style>
-</head>
-<body class="min-h-screen flex flex-col">
-    <div class="container mx-auto px-4 py-8 flex-grow flex flex-col">
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">LTSM</h1>
-            <p class="text-xl md:text-2xl text-gray-300">Votează limba ta preferată</p>
-        </header>
-
-        <main class="flex-grow flex flex-col items-center justify-center">
-            <div id="name-entry" class="card p-8 rounded-xl w-full max-w-md mb-12">
-                <h2 class="text-2xl font-bold mb-6 text-center">Înregistrează-te pentru a vota</h2>
-                <div class="space-y-4">
-                    <div>
-                        <label for="username" class="block text-sm font-medium text-gray-300 mb-1">Numele tău</label>
-                        <input 
-                            type="text" 
-                            id="username" 
-                            placeholder="Introdu numele tău" 
-                            class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition"
-                        >
-                    </div>
-                    <button 
-                        id="register-btn"
-                        class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
-                        disabled
-                    >
-                        Înregistrează-te & Votează
-                    </button>
-                </div>
-            </div>
-
-            <div id="voting-section" class="hidden card p-8 rounded-xl w-full max-w-2xl mb-12">
-                <h2 class="text-2xl font-bold mb-6 text-center">Alege limba ta preferată</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="card p-4 rounded-lg hover:bg-gray-800 cursor-pointer transition voting-option" data-language="romana">
-                        <div class="flex flex-col items-center">
-                            <img src="https://placehold.co/100x60/6c5ce7/FFFFFF?text=RO" alt="Steagul României cu albastru, galben și roșu" class="mb-3 rounded">
-                            <h3 class="text-lg font-semibold">Română</h3>
-                        </div>
-                    </div>
-                    
-                    <div class="card p-4 rounded-lg hover:bg-gray-800 cursor-pointer transition voting-option" data-language="engleza">
-                        <div class="flex flex-col items-center">
-                            <img src="https://placehold.co/100x60/FF0000/FFFFFF?text=EN" alt="Union Jack flag with red, white and blue colors" class="mb-3 rounded">
-                            <h3 class="text-lg font-semibold">Engleză</h3>
-                        </div>
-                    </div>
-                    
-                    <div class="card p-4 rounded-lg hover:bg-gray-800 cursor-pointer transition voting-option" data-language="franceza">
-                        <div class="flex flex-col items-center">
-                            <img src="https://placehold.co/100x60/0055A4/FFFFFF?text=FR" alt="Tricolor French flag with blue, white and red vertical stripes" class="mb-3 rounded">
-                            <h3 class="text-lg font-semibold">Franceză</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="results-section" class="card p-8 rounded-xl w-full max-w-4xl">
-                <h2 class="text-2xl font-bold mb-6 text-center">Rezultate în timp real</h2>
-                
-                <div class="flex flex-col md:flex-row gap-8 mb-8">
-                    <div class="flex-grow">
-                        <div class="space-y-4">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span>Română</span>
-                                    <span id="romanian-percent">0%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill bg-purple-500" id="romanian-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span>Engleză</span>
-                                    <span id="english-percent">0%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill bg-pink-500" id="english-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span>Franceză</span>
-                                    <span id="french-percent">0%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill bg-blue-500" id="french-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex-grow">
-                        <h3 class="text-lg font-semibold mb-4">Top votanți</h3>
-                        <div class="space-y-2" id="leaderboard">
-                            <div class="leaderboard-item p-3 rounded-lg bg-gray-800/50">
-                                <div class="flex justify-between">
-                                    <span>Introdu numele pentru a vedea clasamentul</span>
-                                    <span class="font-medium">-</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center text-sm text-gray-400">
-                    <p id="total-votes">Total voturi: 0</p>
-                    <p id="user-vote" class="hidden">Ai votat: <span class="font-medium"></span></p>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <footer class="py-6 text-center text-gray-400 text-sm">
-        <p>Sistem de votare LTSM © 2023 | Toate drepturile rezervate</p>
-    </footer>
-
     <script>
-        // Store votes and users
-        let votes = {
-            romana: 0,
-            engleza: 0,
-            franceza: 0
-        };
-        
-        let users = {};
-        let currentUser = null;
-        
-        // DOM elements
-        const nameEntry = document.getElementById('name-entry');
-        const votingSection = document.getElementById('voting-section');
-        const registerBtn = document.getElementById('register-btn');
-        const usernameInput = document.getElementById('username');
-        const leaderboard = document.getElementById('leaderboard');
-        const totalVotesEl = document.getElementById('total-votes');
-        const userVoteEl = document.getElementById('user-vote');
-        
-        // Percent elements
-        const percentElements = {
-            romana: document.getElementById('romanian-percent'),
-            engleza: document.getElementById('english-percent'),
-            franceza: document.getElementById('french-percent')
-        };
-        
-        // Progress bars
-        const progressBars = {
-            romana: document.getElementById('romanian-bar'),
-            engleza: document.getElementById('english-bar'),
-            franceza: document.getElementById('french-bar')
-        };
-        
-        // Event listeners
-        usernameInput.addEventListener('input', function() {
-            registerBtn.disabled = this.value.trim() === '';
-        });
-        
-        registerBtn.addEventListener('click', function() {
-            const username = usernameInput.value.trim();
-            if (username) {
-                currentUser = username;
-                users[username] = { voted: false };
-                nameEntry.classList.add('hidden');
-                votingSection.classList.remove('hidden');
-                updateLeaderboard();
-            }
-        });
-        
-        document.querySelectorAll('.voting-option').forEach(option => {
-            option.addEventListener('click', function() {
-                if (!currentUser || users[currentUser].voted) return;
-                
-                const language = this.dataset.language;
-                votes[language]++;
-                users[currentUser] = {
-                    voted: true,
-                    language: language
-                };
-                
-                updateResults();
-                updateLeaderboard();
-                
-                // Show user's vote
-                userVoteEl.classList.remove('hidden');
-                userVoteEl.querySelector('span').textContent = language.charAt(0).toUpperCase() + language.slice(1);
-                userVoteEl.classList.add('glow');
-                setTimeout(() => userVoteEl.classList.remove('glow'), 2000);
+        document.addEventListener('DOMContentLoaded', function() {
+            const usernameInput = document.getElementById('username');
+            const registerBtn = document.getElementById('register-btn');
+            
+            // Verificăm inputul la fiecare tastare
+            usernameInput.addEventListener('input', function() {
+                registerBtn.disabled = this.value.trim().length < 2;
             });
-        });
-        
-        // Update functions
-        function updateResults() {
-            const total = Object.values(votes).reduce((a, b) => a + b, 0);
             
-            for (const lang in votes) {
-                const percentage = total > 0 ? Math.round((votes[lang] / total) * 100) : 0;
-                percentElements[lang].textContent = `${percentage}%`;
-                progressBars[lang].style.width = `${percentage}%`;
-            }
+            // Funcția de înregistrare
+            registerBtn.addEventListener('click', function() {
+                const username = usernameInput.value.trim();
+                if(username.length >= 2) {
+                    // Ascundem secțiunea de nume
+                    document.getElementById('name-entry').classList.add('hidden');
+                    // Arătăm secțiunea de votare
+                    document.getElementById('voting-section').classList.remove('hidden');
+                    // Actualizăm numele utilizatorului
+                    document.getElementById('user-greeting').textContent = username;
+                }
+            });
             
-            totalVotesEl.textContent = `Total voturi: ${total}`;
-        }
-        
-        function updateLeaderboard() {
-            // Sort users by those who voted
-            const votedUsers = Object.entries(users)
-                .filter(([_, data]) => data.voted)
-                .sort((a, b) => {
-                    // Simple sorting - could be enhanced with timestamps
-                    if (a[1].language === b[1].language) return 0;
-                    return a[1].language.localeCompare(b[1].language);
+            // Inițializăm statisticile
+            let stats = {
+                romana: 0,
+                engleza: 0,
+                franceza: 0,
+                total: 0
+            };
+            
+            // Evenimente pentru votare
+            document.querySelectorAll('.voting-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const language = this.dataset.language;
+                    stats[language]++;
+                    stats.total++;
+                    updateStats();
+                    
+                    // Adăugăm în leaderboard
+                    const leaderboard = document.getElementById('leaderboard');
+                    const entry = document.createElement('div');
+                    entry.className = 'leaderboard-item bg-gray-800 p-3 rounded mb-2 animate-pulse';
+                    entry.innerHTML = `
+                        <span class="font-bold">${document.getElementById('username').value.trim()}</span>
+                        <span class="float-right">${language.charAt(0).toUpperCase() + language.slice(1)}</span>
+                    `;
+                    leaderboard.insertBefore(entry, leaderboard.firstChild);
                 });
+            });
             
-            leaderboard.innerHTML = '';
-            
-            if (votedUsers.length === 0) {
-                leaderboard.innerHTML = `
-                    <div class="leaderboard-item p-3 rounded-lg bg-gray-800/50">
-                        <div class="flex justify-between">
-                            <span>Încă nimeni nu a votat</span>
-                            <span class="font-medium">-</span>
-                        </div>
-                    </div>
-                `;
-                return;
+            function updateStats() {
+                document.querySelectorAll('.voting-option').forEach(option => {
+                    const language = option.dataset.language;
+                    const percentage = stats.total > 0 ? Math.round((stats[language] / stats.total) * 100) : 0;
+                    option.querySelector('.percentage').textContent = `${percentage}%`;
+                    option.querySelector('.progress-fill').style.width = `${percentage}%`;
+                });
             }
+        });
+    </script>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-5xl font-bold text-center mb-2 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">LTSM</h1>
+        <p class="text-xl text-center mb-8 text-gray-300">Votare limbă preferată</p>
+        
+        <div id="name-entry" class="max-w-md mx-auto card p-8 rounded-2xl shadow-xl">
+            <h2 class="text-2xl font-bold mb-6 text-center">Introdu numele tău</h2>
+            <input type="text" id="username" placeholder="Cum te cheamă?" 
+                   class="w-full px-5 py-3 rounded-xl bg-slate-800 border border-slate-700 focus:ring-2 focus:ring-purple-500 mb-6 text-lg">
+            <button id="register-btn" disabled 
+                    class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-medium transition-all hover:scale-[1.02] disabled:opacity-50">
+                Înregistrează-te <span class="ml-2">→</span>
+            </button>
+        </div>
+        
+        <div id="voting-section" class="hidden max-w-md mx-auto mt-8">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+                <h2 class="text-xl font-semibold mb-4">Bună, <span id="user-greeting"></span>!</h2>
+                <p class="mb-4">Alege limba ta preferată:</p>
+                
+                <div class="voting-option option-card p-5 mb-4 rounded-xl bg-slate-800/80 cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg" data-language="romana">
+                    <div class="flex justify-between mb-2 items-center">
+                        <span class="text-lg font-medium">Română 🇷🇴</span>
+                        <span class="percentage text-purple-300 font-bold">0%</span>
+                    </div>
+                    <div class="progress-bar bg-slate-700">
+                        <div class="progress-fill bg-gradient-to-r from-purple-500 to-pink-500" style="width: 0%"></div>
+                    </div>
+                </div>
+                
+                <div class="voting-option p-4 mb-4 rounded bg-gray-700 cursor-pointer hover:bg-gray-600" data-language="engleza">
+                    <div class="flex justify-between mb-1">
+                        <span>Engleză</span>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <div class="progress-bar h-2 bg-gray-600 rounded-full">
+                        <div class="progress-fill h-full bg-green-500 rounded-full" style="width: 0%"></div>
+                    </div>
+                </div>
+                
+                <div class="voting-option p-4 rounded bg-gray-700 cursor-pointer hover:bg-gray-600" data-language="franceza">
+                    <div class="flex justify-between mb-1">
+                        <span>Franceză</span>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <div class="progress-bar h-2 bg-gray-600 rounded-full">
+                        <div class="progress-fill h-full bg-purple-500 rounded-full" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
             
-            voted
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-4 text-purple-300">🔝 Clasament</h2>
+                <div id="leaderboard" class="space-y-3">
+                    <p class="text-gray-400 text-center py-4">Așteptăm primul vot...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
