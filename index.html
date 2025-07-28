@@ -34,57 +34,63 @@
         document.addEventListener('DOMContentLoaded', function() {
             const usernameInput = document.getElementById('username');
             const registerBtn = document.getElementById('register-btn');
-            
-            // Verificăm inputul la fiecare tastare
+            const userGreeting = document.getElementById('user-greeting');
+            const votingSection = document.getElementById('voting-section');
+            const nameEntry = document.getElementById('name-entry');
+
+            // Load saved user data from localStorage
+            const savedUsername = localStorage.getItem('username');
+            const savedVotes = JSON.parse(localStorage.getItem('votes')) || { romana: 0, engleza: 0, franceza: 0, total: 0 };
+
+            if (savedUsername) {
+                usernameInput.value = savedUsername;
+                userGreeting.textContent = savedUsername;
+                nameEntry.classList.add('hidden');
+                votingSection.classList.remove('hidden');
+                updateStats(savedVotes);
+            }
+
+            // Enable register button based on input
             usernameInput.addEventListener('input', function() {
                 registerBtn.disabled = this.value.trim().length < 2;
             });
-            
-            // Funcția de înregistrare
+
+            // Register user and save to localStorage
             registerBtn.addEventListener('click', function() {
                 const username = usernameInput.value.trim();
-                if(username.length >= 2) {
-                    // Ascundem secțiunea de nume
-                    document.getElementById('name-entry').classList.add('hidden');
-                    // Arătăm secțiunea de votare
-                    document.getElementById('voting-section').classList.remove('hidden');
-                    // Actualizăm numele utilizatorului
-                    document.getElementById('user-greeting').textContent = username;
+                if (username.length >= 2) {
+                    localStorage.setItem('username', username);
+                    userGreeting.textContent = username;
+                    nameEntry.classList.add('hidden');
+                    votingSection.classList.remove('hidden');
                 }
             });
-            
-            // Inițializăm statisticile
-            let stats = {
-                romana: 0,
-                engleza: 0,
-                franceza: 0,
-                total: 0
-            };
-            
-            // Evenimente pentru votare
+
+            // Voting functionality
             document.querySelectorAll('.voting-option').forEach(option => {
                 option.addEventListener('click', function() {
                     const language = this.dataset.language;
-                    stats[language]++;
-                    stats.total++;
-                    updateStats();
+                    savedVotes[language]++;
+                    savedVotes.total++;
+                    localStorage.setItem('votes', JSON.stringify(savedVotes));
+                    updateStats(savedVotes);
                     
-                    // Adăugăm în leaderboard
+                    // Add to leaderboard
                     const leaderboard = document.getElementById('leaderboard');
                     const entry = document.createElement('div');
                     entry.className = 'leaderboard-item bg-gray-800 p-3 rounded mb-2 animate-pulse';
                     entry.innerHTML = `
-                        <span class="font-bold">${document.getElementById('username').value.trim()}</span>
+                        <span class="font-bold">${savedUsername}</span>
                         <span class="float-right">${language.charAt(0).toUpperCase() + language.slice(1)}</span>
                     `;
                     leaderboard.insertBefore(entry, leaderboard.firstChild);
                 });
             });
-            
-            function updateStats() {
+
+            function updateStats(votes) {
                 document.querySelectorAll('.voting-option').forEach(option => {
                     const language = option.dataset.language;
-                    const percentage = stats.total > 0 ? Math.round((stats[language] / stats.total) * 100) : 0;
+                    const percentage = votes.total > 0 ? Math.round((votes[language] / votes.total) * 100) : 0;
                     option.querySelector('.percentage').textContent = `${percentage}%`;
                     option.querySelector('.progress-fill').style.width = `${percentage}%`;
                 });
