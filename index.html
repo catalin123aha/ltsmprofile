@@ -1,132 +1,3 @@
-🔄 **HTML Edit Mode** - Processing your edit request...
-
-Here are the specific changes to make the interface more attractive while keeping the same functionality:
-
-1. First, update the head section with better styling:
-
-```diff
-<<<<<<< SEARCH
-    <script src="https://cdn.tailwindcss.com"></script>
-=======
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #8b5cf6;
-            --secondary: #a78bfa;
-            --accent: #ec4899;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        }
-        .card {
-            backdrop-filter: blur(10px);
-            background: rgba(30, 41, 59, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .progress-bar {
-            height: 8px;
-            border-radius: 4px;
-        }
-        .option-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4);
-        }
-    </style>
->>>>>>> REPLACE
-
-
-```
-2. Update the main title section:
-
-```diff
-<<<<<<< SEARCH
-        <h1 class="text-3xl font-bold text-center mb-8">LTSM - Votare Limbă</h1>
-=======
-        <h1 class="text-5xl font-bold text-center mb-2 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">LTSM</h1>
-        <p class="text-xl text-center mb-8 text-gray-300">Votare limbă preferată</p>
->>>>>>> REPLACE
-
-
-```
-3. Update the name entry section:
-
-```diff
-<<<<<<< SEARCH
-        <div id="name-entry" class="max-w-md mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h2 class="text-xl font-semibold mb-4">Introdu numele tău</h2>
-            <input type="text" id="username" placeholder="Numele tău..." class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 mb-4">
-            <button id="register-btn" disabled class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded disabled:opacity-50">Înregistrează-te</button>
-        </div>
-=======
-        <div id="name-entry" class="max-w-md mx-auto card p-8 rounded-2xl shadow-xl">
-            <h2 class="text-2xl font-bold mb-6 text-center">Introdu numele tău</h2>
-            <input type="text" id="username" placeholder="Cum te cheamă?" 
-                   class="w-full px-5 py-3 rounded-xl bg-slate-800 border border-slate-700 focus:ring-2 focus:ring-purple-500 mb-6 text-lg">
-            <button id="register-btn" disabled 
-                    class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-medium transition-all hover:scale-[1.02] disabled:opacity-50">
-                Înregistrează-te <span class="ml-2">→</span>
-            </button>
-        </div>
->>>>>>> REPLACE
-
-
-```
-4. Update the voting options:
-
-```diff
-<<<<<<< SEARCH
-                <div class="voting-option p-4 mb-4 rounded bg-gray-700 cursor-pointer hover:bg-gray-600" data-language="romana">
-                    <div class="flex justify-between mb-1">
-                        <span>Română</span>
-                        <span class="percentage">0%</span>
-                    </div>
-                    <div class="progress-bar h-2 bg-gray-600 rounded-full">
-                        <div class="progress-fill h-full bg-blue-500 rounded-full" style="width: 0%"></div>
-                    </div>
-                </div>
-=======
-                <div class="voting-option option-card p-5 mb-4 rounded-xl bg-slate-800/80 cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg" data-language="romana">
-                    <div class="flex justify-between mb-2 items-center">
-                        <span class="text-lg font-medium">Română 🇷🇴</span>
-                        <span class="percentage text-purple-300 font-bold">0%</span>
-                    </div>
-                    <div class="progress-bar bg-slate-700">
-                        <div class="progress-fill bg-gradient-to-r from-purple-500 to-pink-500" style="width: 0%"></div>
-                    </div>
-                </div>
->>>>>>> REPLACE
-
-
-```
-5. Update the leaderboard section:
-
-```diff
-<<<<<<< SEARCH
-                <h2 class="text-xl font-semibold mb-4">Clasament</h2>
-                <div id="leaderboard" class="space-y-2">
-                    <p class="text-gray-400">Niciun vot încă...</p>
-                </div>
-=======
-                <h2 class="text-xl font-bold mb-4 text-purple-300">🔝 Clasament</h2>
-                <div id="leaderboard" class="space-y-3">
-                    <p class="text-gray-400 text-center py-4">Așteptăm primul vot...</p>
-                </div>
->>>>>>> REPLACE
-
-
-```
-These changes will create a more modern, attractive interface while maintaining all the original functionality. The design includes:
-- Gradient colors and smooth animations
-- Better typography with custom font
-- Improved card designs with blur effects
-- More vibrant interactive elements
-- Consistent spacing and proportions
-- Modern progress bars
-- Emoji integration for visual appealHere is the updated HTML content after applying above edits:
-
-```html
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -221,7 +92,7 @@ These changes will create a more modern, attractive interface while maintaining 
         });
     </script>
 </head>
-<body class="bg-gray-900 text-white">
+<body>
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-5xl font-bold text-center mb-2 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">LTSM</h1>
         <p class="text-xl text-center mb-8 text-gray-300">Votare limbă preferată</p>
@@ -251,23 +122,23 @@ These changes will create a more modern, attractive interface while maintaining 
                     </div>
                 </div>
                 
-                <div class="voting-option p-4 mb-4 rounded bg-gray-700 cursor-pointer hover:bg-gray-600" data-language="engleza">
-                    <div class="flex justify-between mb-1">
-                        <span>Engleză</span>
-                        <span class="percentage">0%</span>
+                <div class="voting-option option-card p-5 mb-4 rounded-xl bg-slate-800/80 cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg" data-language="engleza">
+                    <div class="flex justify-between mb-2 items-center">
+                        <span class="text-lg font-medium">Engleză 🇬🇧</span>
+                        <span class="percentage text-purple-300 font-bold">0%</span>
                     </div>
-                    <div class="progress-bar h-2 bg-gray-600 rounded-full">
-                        <div class="progress-fill h-full bg-green-500 rounded-full" style="width: 0%"></div>
+                    <div class="progress-bar bg-slate-700">
+                        <div class="progress-fill bg-gradient-to-r from-purple-500 to-pink-500" style="width: 0%"></div>
                     </div>
                 </div>
                 
-                <div class="voting-option p-4 rounded bg-gray-700 cursor-pointer hover:bg-gray-600" data-language="franceza">
-                    <div class="flex justify-between mb-1">
-                        <span>Franceză</span>
-                        <span class="percentage">0%</span>
+                <div class="voting-option option-card p-5 mb-4 rounded-xl bg-slate-800/80 cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg" data-language="franceza">
+                    <div class="flex justify-between mb-2 items-center">
+                        <span class="text-lg font-medium">Franceză 🇫🇷</span>
+                        <span class="percentage text-purple-300 font-bold">0%</span>
                     </div>
-                    <div class="progress-bar h-2 bg-gray-600 rounded-full">
-                        <div class="progress-fill h-full bg-purple-500 rounded-full" style="width: 0%"></div>
+                    <div class="progress-bar bg-slate-700">
+                        <div class="progress-fill bg-gradient-to-r from-purple-500 to-pink-500" style="width: 0%"></div>
                     </div>
                 </div>
             </div>
@@ -282,4 +153,3 @@ These changes will create a more modern, attractive interface while maintaining 
     </div>
 </body>
 </html>
-```
